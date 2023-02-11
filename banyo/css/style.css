@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+.content{
+  max-width: 1250px;
+  margin: auto;
+  padding: 0 30px;
+}
+.navbar{
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  padding: 25px 0;
+  transition: all 0.3s ease;
+}
+.navbar.sticky{
+  padding: 5px 0;
+  background-color: red;
+  height: 70px;
+}
+.navbar .content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .menu-list{
+  display: inline-flex;
+  width: 100vw;
+  justify-content: center;
+  height: 14vh;
+  align-items: center;
+}
+.menu-list li{
+  list-style: none;
+  border: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  border-radius: 20px;
+  padding: 0.55rem 0;
+  width: 130px;
+  font-weight: 600;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+  background-color: #ffffff;
+}
+.menu-list li a{
+
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: 900;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 20px;
+  color: #2c2d2f;
+  margin: 0 0.5rem;
+  cursor: pointer;
+
+}
+
+.menu-list li:hover{
+    background: green;
+    color: #fff;
+}
+.icon{
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+.fa, .fas{
+    color: aqua;
+}
+.menu-list .cancel-btn{
+  position: absolute;
+  right: 30px;
+  top: 20px;
+}
+@media (max-width: 1230px) {
+  .content{
+    padding: 0 60px;
+  }
+}
+@media (max-width: 1100px) {
+  .content{
+    padding: 0 40px;
+  }
+}
+@media (max-width: 900px) {
+  .content{
+    padding: 0 30px;
+  }
+}
+@media (max-width: 868px) {
+  body.disabled{
+    overflow: hidden;
+  }
+  .icon{
+    display: block;
+  }
+  .icon.hide{
+    display: none;
+  }
+  .navbar .menu-list{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    left: -100%;
+    top: 0px;
+    display: block;
+    padding: 40px 0;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    background-image: url(../image/neymar-jr-making-tongue-and-hand-signals-with-brazilian-jersey-wallpaper-1440x960_37.jpg);
+    background-position: center;
+    transition: all 0.3s ease;
+    background-size: cover;
+    z-index: 999;
+    padding-bottom: 212px;
+  }
+  .navbar.show .menu-list{
+    left: 0%;
+  }
+  .navbar .menu-list li{
+    margin-top: 45px;
+  }
+  .navbar .menu-list li a{
+    font-size: 23px;
+    margin-left: -100%;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .navbar.show .menu-list li a{
+    margin-left: 0px;
+  }
+}
+@media (max-width: 380px) {
+  .navbar .logo a{
+    font-size: 27px;
+  }
+}
+.bat{
+    height: 1000vh;
+}
+header{
+    background-image: url(../image/961989.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+#about{
+    height: 200vh;
+    background-image: url(../image/about_ko.jpg);
+    background-position: center;
+}
+.wrapper{
+    height: 400px;
+    width: 320px;
+    position: relative;
+    transform-style: preserve-3d;
+   perspective: 1000px;
+  }
+.badeta{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  .wrapper .card{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    background: #fff;
+    border-radius: 10px;
+    transform: translateY(0deg);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+    transition: transform 0.7s cubic-bezier(0.4,0.2,0.2,1);
+  }
+  .wrapper:hover > .front-face{
+    transform: rotateY(-180deg);
+  }
+  .wrapper .card img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .wrapper .back-face{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    transform: rotateY(180deg);
+  }
+  .wrapper:hover > .back-face{
+    transform: rotateY(0deg);
+  }
+
+  .wrapper .back-face img{
+    height: 150px;
+    width: 150px;
+    padding: 5px;
+    border-radius: 50%;
+    background: linear-gradient(375deg, #1cc7d0, #2ede98);
+  }
+
+  .wrapper .back-face .info{
+    text-align: center;
+  }
+
+  .back-face .info .title{
+    font-size: 30px;
+    font-weight: 500;
+  }
+  .back-face ul{
+    display: flex;
+  }
+  .back-face ul a{
+    display: block;
+    height: 40px;
+    width: 40px;
+    color: #fff;
+    text-align: center;
+    margin: 0 5px;
+    line-height: 38px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background: linear-gradient(375deg, #1cc7d0, #2ede98);
+    transition: all 0.5s ease;
+  }
+ 
+  .back-face ul a:hover{
+    color: #1cc7d0;
+    border-color: #1cc7d0;
+    background: linear-gradient(375deg, transparent, transparent);
+  }
+
+  .tex{
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+ 
+.center{
+    position: relative;
+    width: 770px;
+    left: -70px;
+    perspective: 1200px;
+  }
+.center .img-card{
+    position: relative;
+    height: 350px;
+    width: 400px;
+    transform-style: preserve-3d;
+    transition: transform .5s ease-in;
+  }
+  .img-card img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .img-card img:nth-child(1){
+    transform: rotateX(-270deg) translateY(-175px);
+    transform-origin: top left;
+  }
+
+.img-card img:nth-child(2){
+    transform: translateZ(175px);
+  }
+   
+.img-card img:nth-child(3){
+    transform: rotateX(-90deg) translateY(175px);
+    transform-origin: bottom center;
+}
+
+   .img-card img:nth-child(4){
+    transform: rotateX(-180deg) translateY(350px) translateZ(175px);
+    transform-origin: bottom right;
+   }
+   
+  #tab-1:checked ~ .img-card{
+    transform: rotateX(-90deg);
+  }
+  
+  #tab-2:checked ~ .img-card{
+    transform: rotateX(0deg);
+  }
+  
+  #tab-3:checked ~ .img-card{
+    transform: rotateX(90deg);
+  }
+ 
+  #tab-4:checked ~ .img-card{
+    transform: rotateX(180deg);
+  }
+ 
+  .sliders{
+    position: absolute;
+    display: block;
+    right: 0;
+    top: -30px;
+  }
+ 
+  .sliders label{
+    height: 98px;
+    width: 110px;
+    display: flex;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 6px 0;
+    border: 2px solid #2d4052;
+  }
+
+ 
+  .sliders label:nth-child(1){
+    margin-top: 0;
+  }
+ 
+  label img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
+    opacity: .9;
+  }
+ 
+  label img:hover,
+  #tab-1:checked ~ .sliders label:nth-child(1) img,
+  #tab-2:checked ~ .sliders label:nth-child(2) img,
+  #tab-3:checked ~ .sliders label:nth-child(3) img,
+  #tab-4:checked ~ .sliders label:nth-child(4) img{
+    filter: grayscale(0);
+    opacity: 1;
+  }
+  input{
+    display: none;
+  }
+  .badeta1{
+    
+    height: 80vh;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #gallery{
+
+    background-image: url(../image/uchiha-obito.jpg);
+  }
+  .badeta2{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+
+  }
